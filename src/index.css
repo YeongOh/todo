@@ -1,3 +1,20 @@
+:root {
+  --color-bg-dark: #f5f5f5;
+  --color-bg: #fdfffd;
+  --color-grey: #d1d1d1;
+  --color-text: #22243b;
+  --color-accent: #f16e03;
+  --color-white: white;
+  --color-scrollbar: #aaa7a7;
+}
+
+html.dark {
+  --color-bg-dark: 1a1c35;
+  --color-bg: #22243b;
+  --color-grey: #4e4e4e;
+  --color-text: #fdfffd;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +22,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  accent-color: var(--color-accent);
+  background: rgb(90, 83, 203);
+  background: linear-gradient(
+    90deg,
+    rgba(90, 83, 203, 1) 0%,
+    rgba(97, 97, 190, 1) 30%,
+    rgba(138, 138, 199, 1) 65%,
+    rgba(119, 133, 209, 1) 89%,
+    rgba(94, 116, 203, 1) 100%
+  );
+}
+
+#root {
+  width: 100%;
+  height: 60%;
+  max-width: 500px;
+  background-color: var(--color-bg-dark);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-bg-scrollbar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-bg-accent);
 }
